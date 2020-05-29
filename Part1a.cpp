@@ -35,51 +35,51 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) horn button
+        4) airbags
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) turn front wheels left
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) Speedometer
+        2) RPM indicator
+        3) milometer
+        4) Fuel indicator
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1) Read fuel level
+        2) Read speed
+        3) Read engine RPM
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1) Airflow control
+        2) Air temperature control
+        3) Hazard lights
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1) Adjust air flow from vents
+        2) Turn air cold
+        3) Switch hazard lights on
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1) Bluetooth connectivity
+        2) Speaker volume control
+        3) Radio tuner
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1) Tune radio to classic FM
+        2) Turn speakers down
+        3) Select songs with a connected phone
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1) Maquette cushioning 
+        2) Seatbelt
+        3) Seat adjustment controls
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1) Adjust seat position
+        2) Sit on it
 */
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
