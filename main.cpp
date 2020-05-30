@@ -53,59 +53,59 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+Thing 1) band
+5 properties: 
+    1) Number of instruments
+    2) Names of instruments
+    3) names of members
+    4) number of members
+    5) tour dates
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Set up instruments on stage
+    2) Play together
+    3) drink beer
  */
 
 /*
-Thing 2)
+Thing 2) washing machine
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) temperature setting
+    2) spin speed setting
+    3) wash cycle duration
+    4) drum diameter
+    5) colour
 3 things it can do:
-    1)
-    2)
-    3)
+    1) spin the drum
+    2) heat water
+    3) lock the door
  */
 
 /*
-Thing 3)
+Thing 3) turntable
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) cartridge type
+    2) chassis material
+    3) colour 
+    4) spin speed
+    5) arm length
 3 things it can do:
-    1)
-    2)
-    3)
+    1) spin
+    2) switch target light on
+    3) lower stylus
  */
 
 /*
-Thing 4)
+Thing 4) bike
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) tyre width
+    2) frame material
+    3) seat height
+    4) handlebar style
+    5) pedal type
 3 things it can do:
-    1)
-    2)
-    3)
+    1) go forwards
+    2) turn
+    3) change gear
  */
 
 
