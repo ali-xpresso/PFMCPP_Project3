@@ -139,17 +139,17 @@ Thing 4) bike
  */
 
 /*
-Thing 10)
+Thing 10) MIDI Controller
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) MIDI surfaces
+    2) Piano Keys
+    3) Display
+    4) MIDI controls
+    5) Rear cable ports
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Output MIDI data
+    2) Link with an external software instrument
+    3) Display note value
  */
 
 /*
