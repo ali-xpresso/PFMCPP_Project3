@@ -152,7 +152,7 @@ Thing 6)
     5) Brake
 3 things it can do:
     1) Apply brake pads
-    2) Turn the front wheel
+    2) Steer the front wheel
     3) Accelerate the engine
  */
 
