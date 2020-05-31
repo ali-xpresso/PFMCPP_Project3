@@ -208,9 +208,9 @@ Thing 10) motorbike
     4) fairing
     5) transmission
 3 things it can do:
-    1) Turn the drivechain
-    2) Turn the front wheel
-    3) Display speed
+    1) Speed up
+    2) Slow down
+    3) Turn
 
 
 /*
