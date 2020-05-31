@@ -130,87 +130,88 @@ Thing 4) bike
 
 /*
 Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+5 properties: engine
+    1) Fuel consumption per mile
+    2) Fuel type
+    3) Cooling type
+    4) Cylinder configuration
+    5) Strokes
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Increase RPM
+    2) Make noise
+    3) Heat up
  */
 
 /*
 Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+5 properties: Handlebars
+    1) Clutch
+    2) Steering
+    3) Headlights
+    4) Acceleration
+    5) Brake
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Apply brake pads
+    2) Turn the front wheel
+    3) Accelerate the engine
  */
 
 /*
 Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+5 properties: instrument cluster
+    1) Speedometer
+    2) RPM indicator
+    3) Miloemeter
+    4) Fuel gauge
+    5) Date/Time
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Show speed in real-time
+    2) Show miles travelled
+    3) Show remaining fuel in tank
  */
 
 /*
 Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+5 properties: fairing
+    1) Material
+    2) Position on the body
+    3) Style
+    4) Colour
+    5) Thickness
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Increase speed
+    2) Lower fuel consumption
+    3) Add cargo space
  */
 
 /*
 Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+5 properties: transmission
+    1) Number of gears
+    2) Number of teeth on gears
+    3) Gear material
+    4) Gear diameter
+    5) Drivetrain material
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Turn wheels forwards
+    2) Shift up a gear
+    3) Shift down a gear
  */
 
 /*
-Thing 10) MIDI Controller
+
+Thing 10) motorbike
 5 properties:
-    1) MIDI surfaces
-    2) Piano Keys
-    3) Display
-    4) MIDI controls
-    5) Rear cable ports
+    1) engine
+    2) handlebars
+    3) instrument cluster
+    4) fairing
+    5) transmission
 3 things it can do:
-    1) Output MIDI data
-    2) Link with an external software instrument
-    3) Display note value
- */
+    1) Turn the drivechain
+    2) Turn the front wheel
+    3) Display speed
+
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
