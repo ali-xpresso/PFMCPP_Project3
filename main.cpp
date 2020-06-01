@@ -31,7 +31,199 @@ struct CellPhone
 {
 
 };
+
+
+struct band
+{
+
+    //1) Number of instruments
+    int numInstruments;
+    //2) Names of instruments (six instruments)
+    char instrumentNames[5];
+    //3) names of members (six members)
+    char memberNames[5];
+    //4) number of members
+    int numberOfMembers;
+    //5) tour dates
+    int tourDates;
+    //1) Set up instruments on stage
+    void setUp();
+    //2) Play together
+    void play();
+    //3) drink beer
+    void drink();  
+};
+
+struct washingMachine
+{
+    //1) temperature setting
+    int temperature;
+    //2) spin speed setting
+    int spinSpeed;
+    //3) wash cycle duration
+    int washTime;
+    //4) drum diameter
+    float drumDiameter;
+    //5) colour
+    int RGB;
+    //1) spin the drum
+    void spinDrum();
+    //2) heat water
+    void heatWater();
+    //3) lock the door
+    void lockDoor();
+
+};
+
+struct turntable
+{
+    //1) cartridge type
+    char cartType;
+    //2) chassis material
+    char chassisMaterial;
+    //3) colour
+    int RGB;
+    //4) spin speed
+    int speed;
+    //5) arm length
+    int armLength;
+    //1) spin
+    void spinPlatter(int RPM);
+    //2) switch target light on
+    void lightOn();
+    //3) lower stylus
+    void lowerStylus();
+};
+
+struct bike
+{
+    //1) tyre width
+    float tyreWidth;
+    //2) frame material
+    char frameMaterial;
+    //3) seat height
+    float seatHeight;
+    //4) handlebar style
+    char handlebarStyle;
+    //5) pedal type
+    char pedalType;
+    //1) go forwards
+    void moveForwards(int howFar, int speed);
+    //2) turn
+    void turn(int angle, bool clockwise);
+    //3) change gear
+    void changeGear(int gear);
+};
+
+struct instrumentCluster
+{
+int speed;
+int RPM;
+int miles;
+int fuel;
+int time;
+
+int showSpeed();
+int showRPM();
+int showMiles();
+int showFuel();
+int showTime();
+};
+
+struct transmission
+{
+    struct gears
+    {
+        public:
+            int numberOfGears;
+            int numberOfGearTeeth;
+            char gearMaterial;
+            int gearDiameter;
+
+            void gearUp();
+            void gearDown();
+    };
+
+    char driveTrainMaterial;
+
+    void turnChain();
+};
+
+
+struct handlebars
+{
+    int clutch;
+    int steeringAngle;
+    int headLights;
+    int acceleration;
+    int brake;
+    
+    void applyClutch(int howMuch);
+    void steer(int angle);
+    void lightsUp(int howMuch);
+    void accelerationAdjust(int howMuch);
+    void brakeAdjust(int howMuch);
+};
+
+struct engine
+{
+    struct cyclinders
+    {
+        int cc;
+        int strokes;    
+    };
+
+    float fuelPerMile;
+    int fuelType;
+    int coolingType;
+
+    void increaseRPM(int RPM);
+    void makeNoise(int volume);
+    void heatUp(int temp);
+};
+
+struct fairing
+{
+    int material;
+    int bodyConfig;
+    int style;
+    int colour;
+    int thickness;
+
+    void increaseSpeed(float speedRatio);
+    void fuelEconomy(float fuelRatio);
+    void increaseCargo(int addedCargo);
+};
+
+struct motorbike
+{
+    engine motoEngine;
+    handlebars motoHandlebars;
+    transmission motoTransmission;
+    instrumentCluster motoCluster;
+    fairing motoFairing;
+
+    void speedUp();
+    void slowDown();
+    void turn();
+
+};
 /*
+
+Thing 10) motorbike
+5 properties:
+    1) engine
+    2) handlebars
+    3) instrument cluster
+    4) fairing
+    5) transmission
+3 things it can do:
+    1) Speed up
+    2) Slow down
+    3) Turn
+
+
+
 2) Copy your 5 properties & 3 actions into the empty struct body.
     - comment them out.
     
@@ -255,7 +447,7 @@ Thing 10) motorbike
     3) Turn
 
 
-/*
+
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
  Commit your changes by clicking on the Source Control panel on the left, entering a message, and click [Commit and push].
