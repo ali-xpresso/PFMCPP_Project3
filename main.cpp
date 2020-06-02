@@ -190,17 +190,42 @@ struct CarWash
     Car carBeingServiced;  
 };
 
-
-
 #include <iostream>
+
+struct Foot
+{
+    int stepSize;
+    void stepForward();
+};
+
+Foot leftFoot;
+Foot rightFoot;
 
 struct Person
 {
     int age;
     int height;
     float hairLength;
-    float GPA
+    float GPA;
+    unsigned int SATScore;
+    int distanceTravelled;
+
+    void run(int, bool);
+
+};
+
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+    if (startWithLeftFoot)
+    {
+        distanceTravelled += leftFoot.stepSize + rightFoot.stepSize;
+    }
+    else 
+    {
+        distanceTravelled += rightFoot.stepSize + leftFoot.stepSize;
+    }
 }
+
 
 
 
