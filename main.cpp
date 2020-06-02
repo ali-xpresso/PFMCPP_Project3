@@ -27,21 +27,23 @@ without errors or warnings before moving on to writing the next UDT.
 
 1) define an empty struct for each of your 10 types. i.e.:
 */
+
+#include <string>
+
 struct CellPhone
 {
 
 };
 
-
-struct band
+struct Band
 {
 
     //1) Number of instruments
     int numInstruments;
     //2) Names of instruments (six instruments)
-    char instrumentNames[5];
+    std::string instrumentNames;
     //3) names of members (six members)
-    char memberNames[5];
+    std::string memberNames[5];
     //4) number of members
     int numberOfMembers;
     //5) tour dates
@@ -54,7 +56,7 @@ struct band
     void drink();  
 };
 
-struct washingMachine
+struct WashingMachine
 {
     //1) temperature setting
     int temperature;
@@ -75,7 +77,7 @@ struct washingMachine
 
 };
 
-struct turntable
+struct Turntable
 {
     //1) cartridge type
     char cartType;
@@ -95,7 +97,7 @@ struct turntable
     void lowerStylus();
 };
 
-struct bike
+struct Bike
 {
     //1) tyre width
     float tyreWidth;
@@ -115,33 +117,32 @@ struct bike
     void changeGear(int gear);
 };
 
-struct instrumentCluster
+struct InstrumentCluster
 {
-int speed;
-int RPM;
-int miles;
-int fuel;
-int time;
+    int speed;
+    int RPM;
+    int miles;
+    int fuel;
+    int time;
 
-int showSpeed();
-int showRPM();
-int showMiles();
-int showFuel();
-int showTime();
+    int showSpeed();
+    int showRPM();
+    int showMiles();
+    int showFuel();
+    int showTime();
 };
 
-struct transmission
+struct Transmission
 {
-    struct gears
+    struct Gears
     {
-        public:
-            int numberOfGears;
-            int numberOfGearTeeth;
-            char gearMaterial;
-            int gearDiameter;
+        int numberOfGears;
+        int numberOfGearTeeth;
+        char gearMaterial;
+        int gearDiameter;
 
-            void gearUp();
-            void gearDown();
+        void gearUp();
+        void gearDown();
     };
 
     char driveTrainMaterial;
@@ -149,8 +150,7 @@ struct transmission
     void turnChain();
 };
 
-
-struct handlebars
+struct Handlebars
 {
     int clutch;
     int steeringAngle;
@@ -165,9 +165,9 @@ struct handlebars
     void brakeAdjust(int howMuch);
 };
 
-struct engine
+struct Engine
 {
-    struct cyclinders
+    struct Cyclinders
     {
         int cc;
         int strokes;    
@@ -182,7 +182,7 @@ struct engine
     void heatUp(int temp);
 };
 
-struct fairing
+struct Fairing
 {
     int material;
     int bodyConfig;
@@ -195,13 +195,13 @@ struct fairing
     void increaseCargo(int addedCargo);
 };
 
-struct motorbike
+struct Motorbike
 {
-    engine motoEngine;
-    handlebars motoHandlebars;
-    transmission motoTransmission;
-    instrumentCluster motoCluster;
-    fairing motoFairing;
+    Engine motoEngine;
+    Handlebars motoHandlebars;
+    Transmission motoTransmission;
+    InstrumentCluster motoCluster;
+    Fairing motoFairing;
 
     void speedUp();
     void slowDown();
