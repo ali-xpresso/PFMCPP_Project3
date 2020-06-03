@@ -47,15 +47,15 @@ struct Person
 
 };
 
-void Person::run(int howFast, bool startWithLeftFoot)
+void Person::run(int howFast = 10, bool startWithLeftFoot = true)
 {
     if (startWithLeftFoot)
     {
-        distanceTravelled += Person::leftFoot.stepSize() + Person::rightFoot.stepSize();
+        distanceTravelled += Person::leftFoot.stepSize() * howFast + Person::rightFoot.stepSize()* howFast;
     }
     else 
     {
-        distanceTravelled += Person::rightFoot.stepSize() + Person::leftFoot.stepSize();
+        distanceTravelled += Person::rightFoot.stepSize() * howFast + Person::leftFoot.stepSize()* howFast;
     }
 }
 
@@ -96,14 +96,14 @@ void tuneUp()
 
 }
 
-void tuneUp(std::string key)
+void tuneUp(std::string key = "A_minor")
 {
     
 }
 
-void goToGig(int howFar)
+void goToGig(int howFar = 10)
 {
-     
+    
 }
 
 struct WashingMachine
