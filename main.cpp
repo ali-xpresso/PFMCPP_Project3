@@ -87,23 +87,23 @@ struct Band
     int totalTourDistance = 0;
 
     void tuneUp();
-    void playSong(std::string);
+    void playSong();
     void goToGig(int);
 };
 
-void tuneUp()
+void Band::tuneUp()
 {
 
 }
 
-void tuneUp(std::string key = "A_minor")
+void Band::playSong()
 {
     
 }
 
-void goToGig(int howFar = 10)
+void Band::goToGig(int howFar = 10)
 {
-    
+    Band::totalTourDistance += howFar;
 }
 
 struct WashingMachine
@@ -115,18 +115,18 @@ struct WashingMachine
     int RGB;
 
     void spinDrum(int);
-    void heatWater();
+    void heatWater(int);
     void lockDoor();
 };
 
 void WashingMachine::spinDrum(int howFast)
 {
-
+    howFast = 0;
 }
 
-void WashingMachine::heatWater()
+void WashingMachine::heatWater(int howHot = 60)
 {
-                  
+    WashingMachine::temperature += howHot;
 }
 
 void WashingMachine::lockDoor()
@@ -147,9 +147,9 @@ struct Turntable
     void lowerStylus();
 };
 
-void Turntable::spinPlatter(int RPM)
+void Turntable::spinPlatter(int RPM = 45)
 {
-
+    speed += RPM;
 }
 
 void Turntable::lightOn()
@@ -164,39 +164,39 @@ void Turntable::lowerStylus()
 
 struct Bike
 {
-    float tyreWidth;
+    int currentGear;
     char frameMaterial;
     float seatHeight;
-    char handlebarStyle;
+    int distanceTravelled;
     char pedalType;
 
     void moveForwards(int, int);
-    void turn(int, bool);
-    void changeGear(int);
+    void turn();
+    void changeGearUp(int);
 };
 
-void Bike::moveForwards(int howFar, int speed)
+void Bike::moveForwards(int howFar = 10, int speed = 1)
+{
+    Bike::distanceTravelled += howFar * speed;
+}
+
+void Bike::turn()
 {
 
 }
 
-void Bike::turn(int angle, bool clockwise)
+void Bike::changeGearUp(int gearup = 1)
 {
-
-}
-
-void Bike::changeGear(int gear)
-{
-
+    Bike::currentGear += gearup;
 }
 
 struct InstrumentCluster
 {
     int speed;
-    int RPM;
     int miles;
     int fuel;
     int time;
+    int RPM;
 
     int showSpeed();
     int showRPM();
@@ -260,24 +260,24 @@ struct Handlebars
     int brake;
     
     void applyClutch(int);
-    void steer(int);
+    void steer();
     void lightsUp(int);
     
 };
 
-void Handlebars::applyClutch(int howMuch)
+void Handlebars::applyClutch(int howMuch = 1)
 {
-
+    Handlebars::clutch += howMuch;
 }
 
-void Handlebars::steer(int angle)
+void Handlebars::steer()
 {
 
 }
 
 void Handlebars::lightsUp(int howMuch)
 {
-
+    Handlebars::headLights += howMuch;
 }
 
 struct Engine
@@ -291,25 +291,28 @@ struct Engine
     float fuelPerMile;
     int fuelType;
     int coolingType;
+    int noise;
+    int temperature;
+    int RPM;
 
     void increaseRPM(int);
     void makeNoise(int);
     void heatUp(int);
 };
 
-void Engine::increaseRPM(int RPM)
+void Engine::increaseRPM(int howMuch)
 {
-
+    Engine::RPM += howMuch;
 }
 
 void Engine::makeNoise(int volume)
 {
-
+    Engine::noise += volume;
 }
 
 void Engine::heatUp(int temp)
 {
-
+    Engine::temperature += temp;
 }
 
 struct Fairing
@@ -320,22 +323,22 @@ struct Fairing
     int colour;
     int thickness;
 
-    void increaseSpeed(float);
-    void fuelEconomy(float);
-    void increaseCargo(int);
+    void increaseSpeed();
+    void fuelEconomy();
+    void increaseCargo();
 };
 
-void Fairing::increaseSpeed(float speedRatio)
+void Fairing::increaseSpeed()
 {
 
 }
 
-void Fairing::fuelEconomy(float fuelRatio)
+void Fairing::fuelEconomy()
 {
 
 }
 
-void Fairing::increaseCargo(int addedCargo)
+void Fairing::increaseCargo()
 {
 
 }
