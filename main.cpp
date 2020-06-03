@@ -57,7 +57,7 @@ void Person::run(int howFast, bool startWithLeftFoot)
     {
         distanceTravelled += Person::rightFoot.stepSize() + Person::leftFoot.stepSize();
     }
-};
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -84,11 +84,11 @@ struct Band
     std::string instrumentNames;
     std::string memberNames;
     int numberOfMembers;
-    int tourDates;
+    int totalTourDistance = 0;
 
     void tuneUp();
     void playSong(std::string);
-    void goToGig();
+    void goToGig(int, int);
 };
 
 void tuneUp()
@@ -103,7 +103,7 @@ void tuneUp(std::string key)
 
 void goToGig(int howFar)
 {
-    
+     
 }
 
 struct WashingMachine
