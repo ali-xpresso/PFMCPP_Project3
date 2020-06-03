@@ -88,7 +88,7 @@ struct Band
 
     void tuneUp();
     void playSong(std::string);
-    void goToGig(int, int);
+    void goToGig(int);
 };
 
 void tuneUp()
