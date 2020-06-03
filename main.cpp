@@ -18,12 +18,19 @@ Create a branch named Part2
 
 struct Foot
 {
-    int stepSize;
+    int stepSize();
     void stepForward();
 };
 
-Foot leftFoot;
-Foot rightFoot;
+int Foot::stepSize()
+{
+    return 5;
+}
+
+void Foot::stepForward()
+{
+    
+}
 
 struct Person
 {
@@ -33,6 +40,8 @@ struct Person
     float GPA;
     unsigned int SATScore;
     int distanceTravelled;
+    Foot leftFoot;
+    Foot rightFoot;
 
     void run(int, bool);
 
@@ -42,15 +51,13 @@ void Person::run(int howFast, bool startWithLeftFoot)
 {
     if (startWithLeftFoot)
     {
-        distanceTravelled += leftFoot.stepSize + rightFoot.stepSize;
+        distanceTravelled += Person::leftFoot.stepSize() + Person::rightFoot.stepSize();
     }
     else 
     {
-        distanceTravelled += rightFoot.stepSize + leftFoot.stepSize;
+        distanceTravelled += Person::rightFoot.stepSize() + Person::leftFoot.stepSize();
     }
-}
-
-
+};
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -62,6 +69,7 @@ void Person::run(int howFast, bool startWithLeftFoot)
  */
 
 #include <string>
+#include <iostream>
 
 struct CellPhone
 {
@@ -78,10 +86,25 @@ struct Band
     int numberOfMembers;
     int tourDates;
 
-    void setUp();
-    void play();
-    void drink();  
+    void tuneUp();
+    void playSong(std::string);
+    void goToGig();
 };
+
+void tuneUp()
+{
+
+}
+
+void tuneUp(std::string key)
+{
+    
+}
+
+void goToGig(int howFar)
+{
+    
+}
 
 struct WashingMachine
 {
@@ -91,11 +114,25 @@ struct WashingMachine
     float drumDiameter;
     int RGB;
 
-    void spinDrum();
+    void spinDrum(int);
     void heatWater();
     void lockDoor();
-
 };
+
+void WashingMachine::spinDrum(int howFast)
+{
+
+}
+
+void WashingMachine::heatWater()
+{
+                  
+}
+
+void WashingMachine::lockDoor()
+{
+    
+}
 
 struct Turntable
 {
@@ -105,10 +142,25 @@ struct Turntable
     int speed;
     int armLength;
 
-    void spinPlatter(int RPM);
+    void spinPlatter(int);
     void lightOn();
     void lowerStylus();
 };
+
+void Turntable::spinPlatter(int RPM)
+{
+
+}
+
+void Turntable::lightOn()
+{
+    
+}
+
+void Turntable::lowerStylus()
+{
+    
+}
 
 struct Bike
 {
@@ -118,10 +170,25 @@ struct Bike
     char handlebarStyle;
     char pedalType;
 
-    void moveForwards(int howFar, int speed);
-    void turn(int angle, bool clockwise);
-    void changeGear(int gear);
+    void moveForwards(int, int);
+    void turn(int, bool);
+    void changeGear(int);
 };
+
+void Bike::moveForwards(int howFar, int speed)
+{
+
+}
+
+void Bike::turn(int angle, bool clockwise)
+{
+
+}
+
+void Bike::changeGear(int gear)
+{
+
+}
 
 struct InstrumentCluster
 {
@@ -134,9 +201,22 @@ struct InstrumentCluster
     int showSpeed();
     int showRPM();
     int showMiles();
-    int showFuel();
-    int showTime();
 };
+
+int InstrumentCluster::showSpeed()
+{
+    return InstrumentCluster::speed;
+}
+
+int InstrumentCluster::showRPM()
+{
+    return InstrumentCluster::RPM;
+}
+
+int InstrumentCluster::showMiles()
+{
+    return InstrumentCluster::miles;
+}
 
 struct Transmission
 {
@@ -156,6 +236,21 @@ struct Transmission
     void turnChain();
 };
 
+void Transmission::Gears::gearUp()
+{
+
+}
+
+void Transmission::Gears::gearDown()
+{
+    
+}
+
+void Transmission::turnChain()
+{
+
+}
+
 struct Handlebars
 {
     int clutch;
@@ -164,12 +259,26 @@ struct Handlebars
     int acceleration;
     int brake;
     
-    void applyClutch(int howMuch);
-    void steer(int angle);
-    void lightsUp(int howMuch);
-    void accelerationAdjust(int howMuch);
-    void brakeAdjust(int howMuch);
+    void applyClutch(int);
+    void steer(int);
+    void lightsUp(int);
+    
 };
+
+void Handlebars::applyClutch(int howMuch)
+{
+
+}
+
+void Handlebars::steer(int angle)
+{
+
+}
+
+void Handlebars::lightsUp(int howMuch)
+{
+
+}
 
 struct Engine
 {
@@ -183,10 +292,25 @@ struct Engine
     int fuelType;
     int coolingType;
 
-    void increaseRPM(int RPM);
-    void makeNoise(int volume);
-    void heatUp(int temp);
+    void increaseRPM(int);
+    void makeNoise(int);
+    void heatUp(int);
 };
+
+void Engine::increaseRPM(int RPM)
+{
+
+}
+
+void Engine::makeNoise(int volume)
+{
+
+}
+
+void Engine::heatUp(int temp)
+{
+
+}
 
 struct Fairing
 {
@@ -196,10 +320,25 @@ struct Fairing
     int colour;
     int thickness;
 
-    void increaseSpeed(float speedRatio);
-    void fuelEconomy(float fuelRatio);
-    void increaseCargo(int addedCargo);
+    void increaseSpeed(float);
+    void fuelEconomy(float);
+    void increaseCargo(int);
 };
+
+void Fairing::increaseSpeed(float speedRatio)
+{
+
+}
+
+void Fairing::fuelEconomy(float fuelRatio)
+{
+
+}
+
+void Fairing::increaseCargo(int addedCargo)
+{
+
+}
 
 struct Motorbike
 {
@@ -214,6 +353,23 @@ struct Motorbike
     void turn();
 
 };
+
+void Motorbike::speedUp()
+{
+
+}
+
+void Motorbike::slowDown()
+{
+    
+}
+
+void Motorbike::turn()
+{
+    
+}
+
+
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
