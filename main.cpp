@@ -75,16 +75,22 @@ struct Band
 {
 
 
-    int currentSong = 0;
+    int currentSong;
     bool playingSong = false;
-    std::string memberNames;
+    std::string songNames[3] = {"Cissy Strut", "Everyday People", "Alone Again Or"};
     int numberOfMembers;
     int totalTourDistance = 0;
 
+    Band();
     void moveToNextSong();
     void playSong();
     void goToGig(int);
 };
+
+Band::Band()
+{
+    currentSong = 0;
+}
 
 void Band::moveToNextSong()
 {
@@ -94,6 +100,7 @@ void Band::moveToNextSong()
 void Band::playSong()
 {
     playingSong = true;
+    std::cout << "Playing: "<< songNames[currentSong] << std::endl;;
 }
 
 void Band::goToGig(int howFar = 10)
@@ -104,20 +111,27 @@ void Band::goToGig(int howFar = 10)
 //==============================================================================
 struct WashingMachine
 {
-    int temperature;
+    int temperature = 0;
     int spinSpeed;
     int washTime;
     bool locked = false;
     int RGB;
 
+    WashingMachine();
     void spinDrum(int);
     void heatWater(int);
     void lockDoor();
 };
 
+WashingMachine::WashingMachine()
+{
+    std::cout << "I hope you like your new washing machine!" << std::endl;
+}
+
 void WashingMachine::spinDrum(int howFast)
 {
-    howFast = 0;
+    howFast = 100;
+    std::cout << "Spinning at " << howFast << "RPM!" << std::endl;
 }
 
 void WashingMachine::heatWater(int howHot = 60)
@@ -133,7 +147,7 @@ void WashingMachine::lockDoor()
 //==============================================================================
 struct Turntable
 {
-    char cartType;
+    std::string cartType;
     char chassisMaterial;
     int RGB;
     int speed;
@@ -169,13 +183,18 @@ struct Bike
     int distanceTravelled;
     int speed = 1;
     
-
+    Bike();
     void moveForwards(int);
     void slowDown(int);
     void changeGearUp(int);
 };
 
-void Bike::moveForwards(int howFar = 10)
+Bike::Bike()
+{
+    currentGear = 1;
+}
+
+void Bike::moveForwards(int howFar)
 {
     distanceTravelled += howFar * speed;
 }
@@ -188,6 +207,8 @@ void Bike::slowDown(int howMuch = -10)
 void Bike::changeGearUp(int gearup = 1)
 {
     currentGear += gearup;
+    std::cout << "Going up a gear." << std::endl;
+
 }
 
 //==============================================================================
@@ -199,10 +220,17 @@ struct InstrumentCluster
     int time;
     int RPM;
 
+    InstrumentCluster();
     int showSpeed();
     int showRPM();
     int showMiles();
+
 };
+
+InstrumentCluster::InstrumentCluster()
+{
+    speed = miles = fuel = time = RPM = 0;
+}
 
 int InstrumentCluster::showSpeed()
 {
@@ -222,10 +250,11 @@ int InstrumentCluster::showMiles()
 //==============================================================================
 struct Transmission
 {
+    Transmission();
     struct Gears
     {
         int numberOfGears;
-        int currentGear = 1;
+        int currentGear;
         char gearMaterial;
         int gearDiameter;
 
@@ -238,6 +267,11 @@ struct Transmission
 
     void turnChain();
 };
+
+Transmission::Transmission()
+{
+    trainTurning = false;
+}
 
 void Transmission::Gears::gearUp()
 {
@@ -262,11 +296,17 @@ struct Handlebars
     int headLights;
     int acceleration;
     
+    Handlebars();
     void clutchUp(int);
     void steer(int);
     void lightsUp(int);
     
 };
+
+Handlebars::Handlebars()
+{
+    clutch = headLights = acceleration = steeringAngle = 0;
+}
 
 void Handlebars::clutchUp(int howMuch = 10)
 {
@@ -299,10 +339,16 @@ struct Engine
     int temperature;
     int RPM;
 
+    Engine();
     void increaseRPM(int);
     void makeNoise(int);
     void heatUp(int);
 };
+
+Engine::Engine()
+{
+    noise = fuelType = RPM = 0;
+}
 
 void Engine::increaseRPM(int howMuch = 10)
 {
@@ -328,10 +374,16 @@ struct Fairing
     int colour;
     int thickness;
 
+    Fairing();
     void switchColour();
     void switchType();
     void increaseCargo(int);
 };
+
+Fairing::Fairing()
+{
+    std::cout << "Your new motorbike has fairing, just to let you know" << std::endl;
+}
 
 void Fairing::switchType()
 {
@@ -398,5 +450,50 @@ void Motorbike::turn()
 int main()
 {
     Example::main();
+
+//======================================================
+    Band myBand;
+    Band yourBand;
+
+    myBand.playSong();
+
+    std::cout << "The songs on the setlist in reverse order:" << std::endl;
+    for (int i = 3 - 1; i >= 0; i--)
+        std::cout << yourBand.songNames[i] << ", ";
+    std::cout << std::endl;
+//======================================================
+
+    WashingMachine myWash;
+    myWash.spinDrum(100);
+    
+//======================================================
+
+    Turntable thorens;
+    Turntable technics;
+    thorens.cartType = "Moving magnet";
+    std::cout << thorens.cartType << std::endl; 
+    technics.switchlightOn();
+
+//======================================================
+
+    Bike roadbike;
+    Bike mountain;
+    roadbike.changeGearUp(1);
+    mountain.moveForwards(10);
+
+//======================================================
+
+    Motorbike harley;
+    Motorbike enfield;
+
+    std::cout << "Harley speed at: " << harley.motoCluster.showSpeed() << std::endl;
+    enfield.motoFairing.cargoCapacity = 50;
+    enfield.motoFairing.increaseCargo(50);
+    std::cout << "Cargo capacity of the enfield: " << enfield.motoFairing.cargoCapacity << std::endl;
+
+//======================================================
+
+
+
     std::cout << "good to go!" << std::endl;
 }
