@@ -153,11 +153,17 @@ struct Turntable
     int speed;
     bool stylusOn = false;
     bool lightOn = false;
+    Turntable();
 
     void spinPlatter(int);
     void switchlightOn();
     void lowerStylus();
 };
+
+Turntable::Turntable()
+{
+    speed = 0;
+}
 
 void Turntable::spinPlatter(int RPM = 45)
 {
