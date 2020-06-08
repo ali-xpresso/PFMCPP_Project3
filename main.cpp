@@ -61,10 +61,7 @@ struct Band
     void goToGig(int);
 };
 
-Band::Band()
-{
-    currentSong = 0;
-}
+Band::Band() : currentSong(0){}
 
 void Band::moveToNextSong()
 {
@@ -92,20 +89,20 @@ struct WashingMachine
     int RGB;
 
     WashingMachine();
-    void spinDrum(int);
+    void spinDrum();
     void heatWater(int);
     void lockDoor();
 };
 
-WashingMachine::WashingMachine()
+WashingMachine::WashingMachine() : spinSpeed(120), washTime(0)
 {
     std::cout << "I hope you like your new washing machine!" << std::endl;
 }
 
-void WashingMachine::spinDrum(int howFast)
+void WashingMachine::spinDrum()
 {
-    howFast = 100;
-    std::cout << "Spinning at " << howFast << "RPM!" << std::endl;
+    
+    std::cout << "Spinning at " << spinSpeed << "RPM!" << std::endl;
 }
 
 void WashingMachine::heatWater(int howHot = 60)
@@ -207,10 +204,7 @@ struct InstrumentCluster
 
 };
 
-InstrumentCluster::InstrumentCluster()
-{
-    speed = miles = fuel = time = RPM = 0;
-}
+InstrumentCluster::InstrumentCluster() : speed(0), miles(0), fuel(0), time(0), RPM(0){}
 
 int InstrumentCluster::showSpeed()
 {
@@ -283,10 +277,7 @@ struct Handlebars
     
 };
 
-Handlebars::Handlebars()
-{
-    clutch = headLights = acceleration = steeringAngle = 0;
-}
+Handlebars::Handlebars() : clutch(0), steeringAngle(0), headLights(0), acceleration(0){}
 
 void Handlebars::clutchUp(int howMuch = 10)
 {
@@ -440,7 +431,7 @@ int main()
 //======================================================
 
     WashingMachine myWash;
-    myWash.spinDrum(100);
+    myWash.spinDrum();
     
 //======================================================
 
