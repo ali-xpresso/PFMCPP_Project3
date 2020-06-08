@@ -77,7 +77,7 @@ struct Band
 
     int currentSong;
     bool playingSong = false;
-    std::string songNames[3] = {"Cissy Strut", "Everyday People", "Alone Again Or"};
+    std::string songNames = "Cissy Strut, Everyday People, Alone Again Or";
     int numberOfMembers;
     int totalTourDistance = 0;
 
@@ -100,7 +100,7 @@ void Band::moveToNextSong()
 void Band::playSong()
 {
     playingSong = true;
-    std::cout << "Playing: "<< songNames[currentSong] << std::endl;;
+    std::cout << "Playing: "<< songNames << std::endl;;
 }
 
 void Band::goToGig(int howFar = 10)
@@ -463,10 +463,6 @@ int main()
 
     myBand.playSong();
 
-    std::cout << "The songs on the setlist in reverse order:" << std::endl;
-    for (int i = 3 - 1; i >= 0; i--)
-        std::cout << yourBand.songNames[i] << ", ";
-    std::cout << std::endl;
 //======================================================
 
     WashingMachine myWash;
