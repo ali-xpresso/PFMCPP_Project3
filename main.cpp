@@ -295,13 +295,13 @@ void Transmission::turnChain()
 //==============================================================================
 struct Handlebars
 {
-    int clutch;
+    int clutch = 0;
     int steeringAngle;
     int headLights;
     int acceleration;
     
     Handlebars();
-    void clutchUp(int);
+    void clutchUp();
     void steer(int);
     void lightsUp(int);
     
@@ -309,9 +309,17 @@ struct Handlebars
 
 Handlebars::Handlebars() : clutch(0), steeringAngle(0), headLights(0), acceleration(0){}
 
-void Handlebars::clutchUp(int howMuch = 10)
+void Handlebars::clutchUp()
 {
-     clutch += howMuch;
+     while (Handlebars::clutch < 101) 
+     {
+        if (clutch == 100)
+        {
+            std::cout << "The clutch is now at 100%" << std::endl;
+        }
+        Handlebars::clutch++;
+     }
+
 }
 
 void Handlebars::steer(int angleChange = 20)
@@ -351,7 +359,7 @@ Engine::Engine()
     noise = fuelType = RPM = 0;
 }
 
-void Engine::increaseRPM(int howMuch = 10)
+void Engine::increaseRPM(int howMuch)
 {
     RPM += howMuch;
 }
@@ -409,15 +417,20 @@ struct Motorbike
     InstrumentCluster motoCluster;
     Fairing motoFairing;
 
-    void speedUp();
+    void speedUp(int);
     void lights();
     void turn();
 
 };
 
-void Motorbike::speedUp()
+void Motorbike::speedUp(int limit)
 {
-    motoEngine.increaseRPM();
+    for (int i = 0 ; i <= limit; i++)
+    {
+        motoEngine.increaseRPM(1);
+        std::cout << "Speed at: " << motoEngine.RPM << std::endl;
+    }
+    
 }
 
 void Motorbike::lights()
@@ -487,6 +500,8 @@ int main()
     enfield.motoFairing.cargoCapacity = 50;
     enfield.motoFairing.increaseCargo(50);
     std::cout << "Cargo capacity of the enfield: " << enfield.motoFairing.cargoCapacity << std::endl;
+    harley.speedUp(120);
+    enfield.motoHandlebars.clutchUp();
 
 //======================================================
 
