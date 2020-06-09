@@ -311,13 +311,13 @@ Handlebars::Handlebars() : clutch(0), steeringAngle(0), headLights(0), accelerat
 
 void Handlebars::clutchUp()
 {
-     while (Handlebars::clutch < 101) 
+     while (clutch < 101) 
      {
         if (clutch == 100)
         {
             std::cout << "The clutch is now at 100%" << std::endl;
         }
-        Handlebars::clutch++;
+        clutch++;
      }
 
 }
