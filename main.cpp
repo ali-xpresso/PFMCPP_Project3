@@ -317,7 +317,7 @@ void Handlebars::clutchUp()
         {
             std::cout << "The clutch is now at 100%" << std::endl;
         }
-        clutch++;
+        ++clutch;
      }
 
 }
